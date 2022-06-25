@@ -10,9 +10,11 @@ import 'pages/ResourceScreen.dart';
 import 'pages/TabsScreen.dart';
 import 'pages/CovidResource.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Map<int, Color> color = {
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
       800: const Color.fromRGBO(136, 14, 79, .9),
       900: const Color.fromRGBO(136, 14, 79, 1),
     };
-    final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+    final Future<FirebaseApp> initialization = Firebase.initializeApp();
 
     return MultiProvider(
         providers: [
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: FutureBuilder(
-          future: _initialization,
+          future: initialization,
           builder: (context, appSnapshot) {
             return MaterialApp(
               theme: ThemeData(
@@ -48,10 +50,10 @@ class MyApp extends StatelessWidget {
                   ? const SplashScreen()
                   : const TabsScreen(),
               routes: {
-                HomeScreen.routeName: (ctx) => HomeScreen(),
+                HomeScreen.routeName: (ctx) => const HomeScreen(),
                 TabsScreen.routeName: (ctx) => const TabsScreen(),
-                ResourceScreen.routeName: (ctx) => ResourceScreen(),
-                CovidResource.routeName: (ctx) => CovidResource(),
+                ResourceScreen.routeName: (ctx) => const ResourceScreen(),
+                CovidResource.routeName: (ctx) => const CovidResource(),
               },
             );
           },

@@ -1,3 +1,6 @@
+// ignore: file_names
+// ignore: file_names
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 import 'ResourceScreen.dart';
@@ -8,10 +11,10 @@ class TabsScreen extends StatefulWidget {
   static const routeName = '/tabsScreen';
 
   @override
-  _TabsScreenState createState() => _TabsScreenState();
+  TabsScreenState createState() => TabsScreenState();
 }
 
-class _TabsScreenState extends State<TabsScreen> {
+class TabsScreenState extends State<TabsScreen> {
   int _selectedPageIndex = 1;
 
   void _selectPage(int index) {
@@ -22,11 +25,11 @@ class _TabsScreenState extends State<TabsScreen> {
 
   final List<Map<String, dynamic>> _pages = [
     {
-      'page': HomeScreen(),
+      'page': const HomeScreen(),
       'title': "NCACCH HOME",
     },
     {
-      'page': ResourceScreen(),
+      'page': const ResourceScreen(),
       'title': "Resources",
     }
   ];
@@ -50,7 +53,7 @@ class _TabsScreenState extends State<TabsScreen> {
         selectedItemColor: Colors.blue,
         currentIndex: _selectedPageIndex,
         type: BottomNavigationBarType.shifting,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Home",

@@ -1,8 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
-class DataProvider extends ChangeNotifier {
-  var _count = 0;
-  void incrementCounter() {
-    _count += 1;
-  }
-}
+class DataProvider extends ChangeNotifier {}
