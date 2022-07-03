@@ -9,6 +9,7 @@ import 'pages/SplashScreen.dart';
 import 'pages/ResourceScreen.dart';
 import 'pages/TabsScreen.dart';
 import 'pages/CovidResource.dart';
+import "pages/UserPage.dart";
 
 void main() => runApp(const MyApp());
 
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
                 TabsScreen.routeName: (ctx) => const TabsScreen(),
                 ResourceScreen.routeName: (ctx) => const ResourceScreen(),
                 CovidResource.routeName: (ctx) => const CovidResource(),
+                UserPage.routeName: (ctx) => const UserPage(),
               },
             );
           },
